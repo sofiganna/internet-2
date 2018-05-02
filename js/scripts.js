@@ -55,4 +55,33 @@ function listUserByAgeLimit(agelimit){
     }
 }
 
+var listUsers={
+        listAll:function(users){
+            for(var i=0; i<users.length; i++){
+                console.log(listUsers.assamble(users[i]))
+            }
+            },
+
+assamble:function(user){
+    return "El usuario "+ user.name + " " + user.lastname +" tiene "+ user.age + " años."
+}, 
+    listByAgeLimit:function(users,age){
+        for(var i=0;i<users.length;i++){
+            if(users[i].age<age){
+                console.log(listUsers.assamble(users[i]))
+            }
+        }
+    }
+}
+var listUsers={
+users:[],
+setUsers:function(users){
+    listUsers.users=users;
+}
+}
+listAll:function(){
+    for(var i=0;listUsers.length>i;i++){
+        console.log(listUsers.assemble(listUsers[i]));
+    }
+}
 
