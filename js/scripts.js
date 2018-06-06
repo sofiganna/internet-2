@@ -65,8 +65,14 @@ function listUserByAgeLimit(agelimit) {
 
 var listUsers = {
     assamble: function (user) {
-        return "La persona " + user.Name + " vive en " + user.country + " trabaja de " 
-        + user.profile + " y su salario es " + user.salary + ". Tiene " + user.age + " años."
+        return '<tr>'
+    +'<td>'+user.Name+'</td>'
+    +'<td>'+user.email+'</td>'
+    +'<td>'+user.salary+'</td>'
+    +'<td>'+user.country+'</td>'
+    +'<td>'+user.phone+'</td>'
+    +'<td>'+user.age+'</td>'
++'</tr>';
     },
     listByAgeLimit: function (users, age) {
         for (var i = 0; i < users.length; i++) {
@@ -82,8 +88,26 @@ var listUsers = {
 
     listAll: function () {
         for (var i = 0; listUsers.users.length > i; i++) {
-            console.log(listUsers.assamble(listUsers.users[i]));
+            $("#userstable tbody").append(listUsers.assamble(listUsers.users[i]));
         }
     }
 }
 
+function toggleClass(){
+        if($("h1").hasClass("active")){
+            $("h1").removeClass("active")
+            $("h1").addClass("disable");
+        }else{
+            $("h1").removeClass("disable")
+            $("h1").addClass("active")
+                    
+        }
+}
+
+
+function assamble(user) {
+    return
+ 
+
+
+}
