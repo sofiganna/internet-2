@@ -8,7 +8,7 @@ var listelements = {
         '<span class="col-2">'+element.price+'</span>' +
         '<span class="col-2"></span>' +
         '<span class="description col-12"></span>' +
-      '</div>';
+    '</div>';
     },
     elements: [],
     setelements: function (elements) {
@@ -18,13 +18,21 @@ var listelements = {
         for (var i = 0; listelements.elements.length > i; i++) {
             $("#table-body").append(listelements.assamble(listelements.elements[i]));
         }
-    }
-},
+    },
+    listbyprice: function (price){
+        for (var i = 0; listelements.elements.length > i; i++) {
+            if(listelements.elements[i].price<price){
+                $("#table-body").append(listelements.assamble(listelements.elements[i]))
+            }
+        }
+}
+};
+listelements.setelements(elementsList);
 
-var listar={
-    filter: function (elements)
-    if(elementList.price)
 
+$("#action1").on("click",function(){
+    $("#table-body").html(" ");
+    var price=$("#price").val();
+    listelements.listbyprice(price);
+});
 
-},
-$("#action1").on("click",)
