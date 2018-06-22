@@ -31,8 +31,11 @@ listelements.setelements(elementsList);
 
 
 $("#action1").on("click",function(){
-    $("#table-body").html(" ");
+    cleartable();
     var price=$("#price").val();
     listelements.listbyprice(price);
 });
 
+function cleartable(){
+   $("#table-body").html(" ");
+}; 
