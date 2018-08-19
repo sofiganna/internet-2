@@ -1,3 +1,15 @@
+$.ajax({
+    method: "GET", //!tiene que ser un string con mayuscula
+    url: "https://demo3487450.mockable.io/belgrano/users",
+}).then(success, error)//funcion que recibe por parametro otra funcion. La primera es respuesta exitosa, la segunda, si falla  
+
+function success(data){
+    listelements.setelements(data);
+    listelements.listAll();
+
+    console.log(data);
+
+
 var listelements = {
     assamble: function (element) {
         return '<div class="row">' +
